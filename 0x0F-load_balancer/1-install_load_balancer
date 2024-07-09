@@ -1,19 +1,12 @@
 #!/usr/bin/env bash
-#installing and configuring haproxy
+# Installs and configure HAproxy on my lb-01 server.
 
-sudo apt-get update
+# Install HAproxy
+sudo apt update
 sudo apt-get install -y haproxy
 
-Server_config=\
-"	
-	listen load_balancer
-	mode http
-	bind *:80
-	balance roundrobin
-	server 28632-web-01 44.200.114.1:80 check
-	server 28632-web-02 3.239.120.245:80 check
-"
-echo "$Server_config" > /etc/haproxy/haproxy.cfg
-echo "ENABLED=1" > /etc/default/haproxy
-
+# Let HAProxy be able to be managed using init script
+sudo  echo "ENABLED=1" | sudo tee -a "/etc/default/haproxy"
+sudo printf "\nlisten www\n\tbind :80\n\tmode http\n\tstats enable\n\tstats uri /haproxy?status\n\tbalance roundrobin\n\tserver 51149-web-01 54.237.81.19:80 check\n\tserver 51149-web-02 34.204.60.234:80 check\n" | sudo tee -a /etc/haproxy/haproxy.cfg
 sudo service haproxy start
+sudo service haproxy restart
