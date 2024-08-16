@@ -1,8 +1,5 @@
 # 1.
-#!/bin/bash
 
-# Create README.md file
-cat << 'EOF' > README.md
 # **Postmortem: Outage Incident on Web Application (August 16, 2024)**
 
 ## **Issue Summary**
@@ -59,12 +56,6 @@ To improve overall system stability, the following actions will be taken:
 5. **Improve Incident Response Process:**
    - Refine the escalation path and clearly define roles and responsibilities for incident response, ensuring efficient collaboration among teams during critical situations.
 
-EOF
-
-echo "README.md file has been created successfully!"
+![Incident Response](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGNsbGphcGZza282aXNhZzhzMGp3aWNteTV5MTR1amNmZ2k2eGhsMiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/2j3oROgKTZOa4/giphy.gif)
 
 
-#2.
-
-
-https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGNsbGphcGZza282aXNhZzhzMGp3aWNteTV5MTR1amNmZ2k2eGhsMiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/2j3oROgKTZOa4/giphy.gif
